@@ -67,7 +67,7 @@ def tacosandburritos_train(
   # register model
   operations['register'] = dsl.ContainerOp(
     name='register',
-    image='xpacrdemo.azurecr.io/register:v1',
+    image='xpacrdemo.azurecr.io/register:v3',
     command=['python'],
     arguments=[
       '/scripts/register.py',
@@ -86,7 +86,7 @@ def tacosandburritos_train(
 
   operations['profile'] = dsl.ContainerOp(
     name='profile',
-    image='xpacrdemo.azurecr.io/profile:v1',
+    image='xpacrdemo.azurecr.io/profile:v2',
     command=['sh'],
     arguments=[
       '/scripts/profile.sh',
@@ -107,7 +107,7 @@ def tacosandburritos_train(
 
   operations['deploy'] = dsl.ContainerOp(
     name='deploy',
-    image='xpacrdemo.azurecr.io/deploy:v1',
+    image='xpacrdemo.azurecr.io/deploy:v2',
     command=['sh'],
     arguments=[
       '/scripts/deploy.sh',
