@@ -1,5 +1,5 @@
 FROM tensorflow/tensorflow:2.0.0a0-gpu-py3
-RUN pip install azure-cli
+RUN pip install azure-cli==2.2.0
 RUN az extension add -n azure-cli-ml
 RUN pip install --upgrade pip
 RUN pip install --upgrade pillow

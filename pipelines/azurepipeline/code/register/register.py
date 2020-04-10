@@ -82,7 +82,7 @@ if __name__ == "__main__":
     if i == 'service_principal_password':
       print('{} => **********'.format(i))
     else:
-      print('{} => {}'.format(i, rgs[i]))
+      print('{} => {}'.format(i, wsrgs[i]))
 
   with(open(str(params_path), 'r')) as f:
     tags = json.load(f)

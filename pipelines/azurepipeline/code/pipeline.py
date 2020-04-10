@@ -33,7 +33,7 @@ def tacosandburritos_train(
   # preprocess data
   operations['preprocess'] = dsl.ContainerOp(
     name='preprocess',
-    image='xpacr.azurecr.io/preprocess:v1',
+    image='xpacrdemo.azurecr.io/preprocess:v1',
     command=['python'],
     arguments=[
       '/scripts/data.py',
@@ -48,7 +48,7 @@ def tacosandburritos_train(
   # train
   operations['training'] = dsl.ContainerOp(
     name='training',
-    image='xpacr.azurecr.io/training:v1',
+    image='xpacrdemo.azurecr.io/training:v1',
     command=['python'],
     arguments=[
       '/scripts/train.py',
@@ -67,7 +67,7 @@ def tacosandburritos_train(
   # register model
   operations['register'] = dsl.ContainerOp(
     name='register',
-    image='xpacr.azurecr.io/register:v1',
+    image='xpacrdemo.azurecr.io/register:v1',
     command=['python'],
     arguments=[
       '/scripts/register.py',
@@ -86,7 +86,7 @@ def tacosandburritos_train(
 
   operations['profile'] = dsl.ContainerOp(
     name='profile',
-    image='xpacr.azurecr.io/profile:v1',
+    image='xpacrdemo.azurecr.io/profile:v1',
     command=['sh'],
     arguments=[
       '/scripts/profile.sh',
@@ -107,7 +107,7 @@ def tacosandburritos_train(
 
   operations['deploy'] = dsl.ContainerOp(
     name='deploy',
-    image='xpacr.azurecr.io/deploy:v1',
+    image='xpacrdemo.azurecr.io/deploy:v1',
     command=['sh'],
     arguments=[
       '/scripts/deploy.sh',
